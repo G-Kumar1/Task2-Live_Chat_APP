@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecureTalk</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <!-- Branding Header OUTSIDE Chat Box -->
+  <header class="branding-header">
+    <img src="logo.jpg" alt="App Logo" class="main-logo" />
+    <h1 class="tagline">Let’s Chat</h1>
+  </header>
+
+  <!-- Main Chat Container -->
+  <div class="chat-container">
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <div class="chat-user-info">
+        <img src="avatar.jpg" alt="DP" id="user-avatar" />
+        <div>
+          <h3 id="chat-with">...</h3>
+          <p id="chat-status">Online</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Messages -->
+    <div id="messages" class="chat-messages"></div>
+
+    <!-- Message Input Area -->
+    <div class="chat-input-area">
+      <div class="attach-dropdown">
+        <button id="attach-btn">📎</button>
+        <div id="dropdown" class="dropdown-menu">
+          <label for="imageInput">🖼 Image</label>
+          <input type="file" id="imageInput" accept="image/*" />
+          <label for="docInput">📄 Document</label>
+          <input type="file" id="docInput" accept=".pdf,.doc,.docx" />
+        </div>
+      </div>
+
+      <input type="text" id="message" placeholder="Type your message..." autocomplete="off" />
+
+      <button id="recordVoiceBtn">
+        <img src="mic_icon.jpg" alt="Voice" />
+      </button>
+
+      <button id="sendBtn">➤</button>
+    </div>
+  </div>
+
+  <script src="client.js" defer></script>
+</body>
+</html>
